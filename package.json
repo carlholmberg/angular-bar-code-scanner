@@ -1,12 +1,12 @@
 {
   "name": "angular-bar-code-scanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This module provide tool to manage bar code scan",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MasterLux/angular-bar-code-scanner.git"
+    "url": "git+https://github.com/carlholmberg/angular-bar-code-scanner.git"
   },
   "keywords": [
     "angular",
@@ -20,7 +20,7 @@
   "author": "Benjamin Clermont",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MasterLux/angular-bar-code-scanner/issues"
+    "url": "https://github.com/carlholmberg/angular-bar-code-scanner/issues"
   },
   "dependencies": {
     "bower": "^1.5.3",
@@ -30,9 +30,8 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-uglify": "~0.2.0",
     "grunt-ng-annotate": "~0.10.0",
     "load-grunt-tasks": "~0.1.0"
   },
-  "homepage": "https://github.com/MasterLux/angular-bar-code-scanner#readme"
+  "homepage": "https://github.com/carlholmberg/angular-bar-code-scanner#readme"
 }
