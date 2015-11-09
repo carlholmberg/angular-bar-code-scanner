@@ -101,31 +101,28 @@ angular.module('angular-bar-code-scanner').directive('barCodeScanner', ['$rootSc
                 var charLimit = BarCodeScannerConfig.getNumberOfCharOfBarCode();
                 var eventName = BarCodeScannerConfig.getBroadcastEventName();
                 element.bind("keypress", function (event) {
-                    // check the keys pressed are numbers
-                    if (event.which >= 48 && event.which <= 57) {
-                        // if a number is pressed we add it to the chars array
-                        chars.push(String.fromCharCode(event.which));
-                        // Pressed is initially set to false so we enter - this variable is here to stop us setting a
-                        // timeout everytime a key is pressed. It is easy to see here that this timeout is set to give
-                        // us 1 second before it resets everything back to normal. If the keypresses have not matched
-                        // the checks in the readBarcodeScanner function below then this is not a barcode
-                        if (pressed === false) {
-                            // we set a timeout function that expires after 1 sec, once it does it clears out a list
-                            // of characters
-                            $timeout(function(){
-                                // check we have a long length e.g. it is a barcode
-                                if (chars.length >= charLimit) {
-                                    // join the chars array to make a string of the barcode scanned
-                                    var barcode = chars.join("");
-                                    $rootScope.$broadcast(eventName,{barCodeValue:barcode});
-                                }
-                                chars = [];
-                                pressed = false;
-                            }, 500);
-                        }
-                        // set press to true so we do not reenter the timeout function above
-                        pressed = true;
+                    // if a number is pressed we add it to the chars array
+                    chars.push(String.fromCharCode(event.which));
+                    // Pressed is initially set to false so we enter - this variable is here to stop us setting a
+                    // timeout everytime a key is pressed. It is easy to see here that this timeout is set to give
+                    // us 1 second before it resets everything back to normal. If the keypresses have not matched
+                    // the checks in the readBarcodeScanner function below then this is not a barcode
+                    if (pressed === false) {
+                        // we set a timeout function that expires after 1 sec, once it does it clears out a list
+                        // of characters
+                        $timeout(function(){
+                            // check we have a long length e.g. it is a barcode
+                            if (chars.length >= charLimit) {
+                                // join the chars array to make a string of the barcode scanned
+                                var barcode = chars.join("");
+                                $rootScope.$broadcast(eventName,{barCodeValue:barcode});
+                            }
+                            chars = [];
+                            pressed = false;
+                        }, 500);
                     }
+                    // set press to true so we do not reenter the timeout function above
+                    pressed = true;
                 });
             });
         }

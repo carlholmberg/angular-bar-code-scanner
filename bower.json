@@ -5,13 +5,13 @@
     "Benjamin Clermont"
   ],
   "main": [
-    "angular-bar-code-scanner.js",
-    "angular-bar-code-scanner.min.js"
+    "angular-bar-code-scanner.js"
   ],
   "private": false,
   "ignore": [
     "src/",
     "Gruntfile.js",
-    "package.json"
+    "package.json",
+    "node_modules/"
   ]
 }
